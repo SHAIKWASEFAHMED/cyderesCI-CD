@@ -21,7 +21,7 @@ phases:
       - docker push $REPO_URI:$IMAGE_TAG
       - docker push $REPO_URI:latest                      # Push 'latest' tag
       - echo Writing image definitions...
-      - printf '[{"name":"nginx-container","imageUri":"%s"}]' $REPO_URI:$IMAGE_TAG > imagedefinitions.json
+      - printf '[{"name":"cyderes-docker-repo-ecr","imageUri":"%s"}]' $REPO_URI:$IMAGE_TAG > imagedefinitions.json
 artifacts:
   files: 
     - imagedefinitions.json
