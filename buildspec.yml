@@ -13,11 +13,13 @@ phases:
       - echo Build started on `date`
       - echo Building the Docker image...
       - docker build -t $REPO_URI:$IMAGE_TAG .
+      - docker tag $REPO_URI:$IMAGE_TAG $REPO_URI:latest  # Add 'latest' tag
   post_build:
     commands:
       - echo Build completed on `date`
-      - echo Pushing the Docker image...
+      - echo Pushing the Docker images...
       - docker push $REPO_URI:$IMAGE_TAG
+      - docker push $REPO_URI:latest                      # Push 'latest' tag
       - echo Writing image definitions...
       - printf '[{"name":"nginx-container","imageUri":"%s"}]' $REPO_URI:$IMAGE_TAG > imagedefinitions.json
 artifacts:
