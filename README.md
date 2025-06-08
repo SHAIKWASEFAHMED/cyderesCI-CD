@@ -1,5 +1,5 @@
 # cyderesCI-CD
-Project: Containerized Web App Deployment Using AWS ECS Fargate & CodePipeline
+**Project:** Containerized Web App Deployment Using AWS ECS Fargate & CodePipeline- NGINX WEBSERVER
 This project sets up a fully automated CI/CD pipeline that builds and deploys a simple web application using AWS services. The application consists of a static index.html file served through a Dockerized container. The source code is managed in a public GitHub repository and includes a Dockerfile and a buildspec.yml for the build process.
 
 **Tech Stack**
